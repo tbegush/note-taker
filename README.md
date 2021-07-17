@@ -34,7 +34,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/tbegush/note-taker">
-    <img src="./assets/images/note-taker-logo.png" alt="Logo" width="363" height=auto>
+    <img src="./note-taker-logo.png" alt="Logo" width="363" height=auto>
   </a>
 
   <h3 align="center">note-taker</h3>
