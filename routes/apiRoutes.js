@@ -2,6 +2,7 @@ const path = require('path');
 const router = require('express').Router();
 const fs = require('fs');
 const {v4: uuidv4 } = require("uuid");
+const { route } = require('./htmlRoutes');
 
 router.get('/notes', (req, res) => {
 let db = fs.readFileSync("db/db.json")
@@ -22,5 +23,12 @@ fs.writeFileSync("db/db.json", JSON.stringify(db));
 res.json(db);
 })
 
+router.delete('/notes/:id', (req, res) => {
+let db = fs.readFileSync("db/db.json")
+db = JSON.parse(db);
+db = db.filter(note => note.id !== req.params.id);
+fs.writeFileSync("db/db.json", JSON.stringify(db));
+res.json(db);
+});
 
 module.exports = router
